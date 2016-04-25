@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+        }
+
+        .column {
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-flex-flow: column nowrap;
+            -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+            -webkit-align-items: flex-end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+        }
+
+        .cell, .cell--visible {
+            max-width: 30px;
+            max-height: 30px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            -webkit-flex-flow: column;
+            -ms-flex-flow: column;
+            flex-flow: column;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .cell {
+            background: transparent;
+        }
+
+        .cell--visible {
+            border: 1px solid lightsalmon;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid" id="grid"></div>
+
+<script src="crossword.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        Crossword('#grid', [
+            'father',
+            'mother',
+            'grandfather',
+            'daughter',
+            'son',
+            'brother',
+            'cousin',
+            'sister'
+        ]);
+    });
+</script>
+</body>
+</html>
